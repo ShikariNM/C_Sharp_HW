@@ -11,10 +11,10 @@ Console.Write("Enter the second number: ");
 int num2 = int.Parse(Console.ReadLine());
 
 if (num1 > num2){
-    Console.WriteLine($"The first one is bigger");
+    Console.WriteLine($"The first one is bigger, the second one is less");
 }
 if (num1 < num2){
-    Console.WriteLine($"The second one is bigger");
+    Console.WriteLine($"The second one is bigger, the first one is less");
 }
 if (num1 == num2){
     Console.WriteLine($"The numbers are equal");
