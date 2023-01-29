@@ -19,3 +19,5 @@ if (num1 < num2){
 if (num1 == num2){
     Console.WriteLine($"The numbers are equal");
 }
+
+//Вывод данных сделал в соответствии с условиями задания, а не примерами.
