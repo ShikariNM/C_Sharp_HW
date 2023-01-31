@@ -13,7 +13,7 @@ if (num > 7 || num < 1){
     return;
 }
 else{
-    if (num == 6 || num == 7) Console.WriteLine ("Congrats, it is a day off! Enjoy!");
+    if (num > 5) Console.WriteLine ("Congrats, it is a day off! Enjoy!");
     else{
         Console.WriteLine ("Unfortunately, it is a workday:( Go to work!");
     }

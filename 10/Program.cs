@@ -7,5 +7,12 @@
 
 Console.Clear ();
 Console.Write ("Enter the number: ");
-int num = int.Parse (Console.ReadLine ());
-Console.WriteLine($"{(num % 100 - num % 10) / 10}");
+string num = Console.ReadLine ();
+if (num.Length != 3){
+    Console.WriteLine ("The number is invalid");
+    return;
+}
+else{
+    int numInt = int.Parse (num);
+    Console.WriteLine($"The second digit is {(numInt % 100 - numInt % 10) / 10}");
+}
