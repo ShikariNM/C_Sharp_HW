@@ -5,17 +5,17 @@
 // A (7,-5, 0); B (1,-1,9) -> 11.53
 
 Console.Clear ();
-Console.Write ("Enter the value of X1: ");
+Console.Write ("Enter X1 value: ");
 int X1 = int.Parse(Console.ReadLine());
-Console.Write ("Enter the value of Y1: ");
+Console.Write ("Enter Y1 value: ");
 int Y1 = int.Parse(Console.ReadLine());
-Console.Write ("Enter the value of Z1: ");
+Console.Write ("Enter Z1 value: ");
 int Z1 = int.Parse(Console.ReadLine());
-Console.Write ("Enter the value of X2: ");
+Console.Write ("Enter X2 value: ");
 int X2 = int.Parse(Console.ReadLine());
-Console.Write ("Enter the value of Y2: ");
+Console.Write ("Enter Y2 value: ");
 int Y2 = int.Parse(Console.ReadLine());
-Console.Write ("Enter the value of Z2: ");
+Console.Write ("Enter Z2 value: ");
 int Z2 = int.Parse(Console.ReadLine());
 
 double dist = Math.Sqrt(Math.Pow(X1-X2, 2) + Math.Pow(Y1-Y2, 2) + Math.Pow(Z1-Z2, 2));
