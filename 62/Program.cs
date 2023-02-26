@@ -16,6 +16,9 @@
 // {00 01 02 03 04} {14 24 34 44} {43 42 41 40} {30 20 10} {11 12 13} {23 33} {32 31} {21} {22}
 //  01 02 03 04 05   06 07 08 09   10 11 12 13   14 15 16   17 18 19   20 21   22 23   24   25
 
+// Комментарии ниже приведены для массива 5х5.
+// Через слеш написаны значения при второй итерации рекурсии.
+
 Console.Clear();
 Console.Write("Enter the size of the array: ");
 int size = int.Parse(Console.ReadLine());
@@ -24,13 +27,12 @@ int[,] array2 = SpiralFilling(array1);
 PrintDoubleArray (array2);
 
 int[,] SpiralFilling(int[,] array){
-    int size = array.GetLength(0);
     int value = 1;
     int i = 0, j = 0;
-    for (; j < size; j++, value++)
+    for (; j < array.GetLength(0); j++, value++)
     {                           //  1    2    3    4    5   Значение элемента при каждой итерации
-        array[i, j] = value;    // 0 0, 0 1, 0 2, 0 3, 0 4 Значение i, j при каждой итерации
-    } // i = 0, j = 5, value = 6    Значение переменных по выходу из цикла
+        array[i, j] = value;    // 0 0, 0 1, 0 2, 0 3, 0 4  Значение i, j при каждой итерации
+    } // i = 0, j = 5, value = 6                            Значение переменных по выходу из цикла
     SpiralSupportRecursion(array, value, i, j, 0);
     return array;
 }
@@ -38,13 +40,13 @@ int[,] SpiralFilling(int[,] array){
 void SpiralSupportRecursion (int[,] array, int value, int i, int j, int count){
     i += 1; // i = 1 / 2
     j -= 1; // j = 4 / 3
-    count += 1; // size = 4 / 3
+    count += 1; // count = 1 / 2 Переменная, которая считает итерации рекурсиии
     for (; i <= array1.GetLength(0)-count; i++, value++)
     {                        //  6    7    8    9  / 20   21
         array[i, j] = value; // 1 4, 2 4, 3 4, 4 4 / 2 3, 3 3
     } // i = 5 / 4, j = 4 / 3, value = 10 / 22
     i -= 1; // i = 4 / 3
-    for (j = array1.GetLength(0)-count-1; j >= count-1; j--, value++) // j = 3 / 2, lowBoarder = 0 / 1
+    for (j = array1.GetLength(0)-count-1; j >= count-1; j--, value++) // j = 3 / 2
     {                        //  10  11   12   13  / 22   23
         array[i, j] = value; // 4 3, 4 2, 4 1, 4 0 / 3 2, 3 1
     } // i = 4 / 3, j = -1 / 0, value = 14 / 24
