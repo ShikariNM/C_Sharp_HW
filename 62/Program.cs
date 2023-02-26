@@ -31,36 +31,35 @@ int[,] SpiralFilling(int[,] array){
     {                           //  1    2    3    4    5   Значение элемента при каждой итерации
         array[i, j] = value;    // 0 0, 0 1, 0 2, 0 3, 0 4 Значение i, j при каждой итерации
     } // i = 0, j = 5, value = 6    Значение переменных по выходу из цикла
-    SpiralSupportRecursion(array, size, value, i, j, 0);
+    SpiralSupportRecursion(array, value, i, j, 0);
     return array;
 }
 
-void SpiralSupportRecursion (int[,] array, int size, int value, int i, int j, int lowBorder){
+void SpiralSupportRecursion (int[,] array, int value, int i, int j, int count){
     i += 1; // i = 1 / 2
     j -= 1; // j = 4 / 3
-    size -= 1; // size = 4 / 3
-    for (; i <= size; i++, value++)
+    count += 1; // size = 4 / 3
+    for (; i <= array1.GetLength(0)-count; i++, value++)
     {                        //  6    7    8    9  / 20   21
         array[i, j] = value; // 1 4, 2 4, 3 4, 4 4 / 2 3, 3 3
     } // i = 5 / 4, j = 4 / 3, value = 10 / 22
     i -= 1; // i = 4 / 3
-    for (j = size-1; j >= lowBorder; j--, value++) // j = 3 / 2, lowBoarder = 0 / 1
+    for (j = array1.GetLength(0)-count-1; j >= count-1; j--, value++) // j = 3 / 2, lowBoarder = 0 / 1
     {                        //  10  11   12   13  / 22   23
         array[i, j] = value; // 4 3, 4 2, 4 1, 4 0 / 3 2, 3 1
     } // i = 4 / 3, j = -1 / 0, value = 14 / 24
     j += 1; // j = 0 / 1
-    lowBorder += 1; // lowBoarder = 1 / 2
-    for (i = size-1; i >= lowBorder; i--, value++) // i = 3
+    for (i = array1.GetLength(0)-count-1; i >= count; i--, value++) // i = 3
     {                        //  14   15   16 / 24
         array[i, j] = value; // 3 0, 2 0, 1 0 / 2 1
     } // i = 0 / 1, j = 0 / 1, value = 17 / 25
     i += 1; // i = 1 / 2
     j += 1; // j = 1 / 2
-    for (; j < size; j++, value++)
+    for (; j < array1.GetLength(0)-count; j++, value++)
     {                        // 17   18   19  / 25
         array[i, j] = value; // 1 1, 1 2, 1 3 / 2 2
     } // i = 1 / 2, j = 4 / 3, value = 20 / 26
-    if(value < Math.Pow(array.GetLength(0), 2)) SpiralSupportRecursion(array, size, value, i, j, lowBorder);
+    if(value < Math.Pow(array.GetLength(0), 2)) SpiralSupportRecursion(array, value, i, j, count);
 }
 
 void PrintDoubleArray (int[,] array){
