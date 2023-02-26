@@ -33,11 +33,11 @@ int[,] SpiralFilling(int[,] array){
     {                           //  1    2    3    4    5   Значение элемента при каждой итерации
         array[i, j] = value;    // 0 0, 0 1, 0 2, 0 3, 0 4  Значение i, j при каждой итерации
     } // i = 0, j = 5, value = 6                            Значение переменных по выходу из цикла
-    SpiralSupportRecursion(array, value, i, j, 0);
+    SpiralSupportRecursion(array, value, i, j);
     return array;
 }
 
-void SpiralSupportRecursion (int[,] array, int value, int i, int j, int count){
+void SpiralSupportRecursion (int[,] array, int value, int i, int j, int count = 0){
     i += 1; // i = 1 / 2
     j -= 1; // j = 4 / 3
     count += 1; // count = 1 / 2 Переменная, которая считает итерации рекурсиии
