@@ -38,15 +38,13 @@ int[,] FillPrintDoubleArray (int numberOfRows, int numberOfColumns, int minValue
 
 double[] ColumnMean (int[,] inArray){
     double[] result = new double[inArray.GetLength(1)];
-    double mean = 0;
     for (int i = 0; i < inArray.GetLength(1); i++)
     {
         for (int j = 0; j < inArray.GetLength(0); j++)
         {
-            mean += inArray[j, i];
+            result[i] += inArray[j, i];
         }
-        result[i] = mean / inArray.GetLength(0);
-        mean = 0;
+        result[i] /= inArray.GetLength(0);
     }
     return result;
 }
